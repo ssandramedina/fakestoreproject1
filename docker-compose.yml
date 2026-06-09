@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+
+  database:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: fakestore
+    ports:
+      - "3306:3306"

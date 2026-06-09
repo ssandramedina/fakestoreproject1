@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Produkter</title>
+    <title>Användare</title>
 
     <style>
         body {
@@ -10,14 +10,10 @@
             margin: 20px;
         }
 
-        .product {
+        .user {
             border: 1px solid lightgray;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-
-        img {
-            width: 120px;
+            padding: 10px;
+            margin-bottom: 10px;
         }
     </style>
 
@@ -65,21 +61,14 @@
 </head>
 <body>
 
-<h1>Produkter</h1>
+<h1>Registrerade användare</h1>
 
-<div class="product" th:each="product : ${products}">
-
-    <h2 th:text="${product.title}"></h2>
-
-    <img th:src="${product.image}" alt="Produktbild">
+<div class="user" th:each="user : ${users}">
 
     <p>
-        Pris:
-        <span th:text="${product.price}"></span>
-        kr
+        Användarnamn:
+        <span th:text="${user.username}"></span>
     </p>
-
-    <p th:text="${product.category}"></p>
 
 </div>
 

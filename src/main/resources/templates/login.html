@@ -1,28 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Produkter</title>
-
+    <title>Logga in</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        .product {
-            border: 1px solid lightgray;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-
-        img {
-            width: 120px;
-        }
-    </style>
-
-    <style>
-
         body {
             background-color: #ffe4ec;
             font-family: Arial, sans-serif;
@@ -61,27 +42,26 @@
         }
 
     </style>
-
 </head>
 <body>
 
-<h1>Produkter</h1>
+<h1>Logga in</h1>
 
-<div class="product" th:each="product : ${products}">
+<form method="post" action="/login">
 
-    <h2 th:text="${product.title}"></h2>
+    <label>Användarnamn:</label>
+    <input type="text" name="username">
 
-    <img th:src="${product.image}" alt="Produktbild">
+    <br><br>
 
-    <p>
-        Pris:
-        <span th:text="${product.price}"></span>
-        kr
-    </p>
+    <label>Lösenord:</label>
+    <input type="password" name="password">
 
-    <p th:text="${product.category}"></p>
+    <br><br>
 
-</div>
+    <button type="submit">Logga in</button>
+
+</form>
 
 </body>
 </html>
